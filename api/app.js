@@ -5,19 +5,16 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const authRoutes = require("./routes/authRoutes.js");
-const postRoutes = require("./routes/postRoutes.js");
-
 const app = express();
 
 // Middleware
-const corsOptions = {
-  origin: "https://loquent.vercel.app", // your frontend domain
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-  credentials: true,
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "https://loquent.vercel.app", // Your frontend URL
+    methods: "GET,POST,PUT,DELETE", // Allowed HTTP methods
+    credentials: true, // If you need to handle cookies, set this to true
+  })
+);
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
@@ -40,8 +37,8 @@ app.get("/", (req, res) => {
   res.json("Welcome to Loquent API");
 });
 // Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/posts", postRoutes);
+app.use("/api/auth", require("./routes/authRoutes.js"));
+app.use("/api/posts", require("./routes/postRoutes.js"));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
