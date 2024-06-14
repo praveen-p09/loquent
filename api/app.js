@@ -11,17 +11,13 @@ const postRoutes = require("./routes/postRoutes.js");
 const app = express();
 
 // Middleware
-// const corsOptions = {
-//   origin: "http://loquent.vercel.app", // your frontend domain
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-//   credentials: true,
-//   allowedHeaders: ["Content-Type", "Authorization"],
-// };
-app.use(
-  cors({
-    origin: "https://loquent.vercel.app", // Update with your client origin
-  })
-);
+const corsOptions = {
+  origin: "https://loquent.vercel.app", // your frontend domain
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
