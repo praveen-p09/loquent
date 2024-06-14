@@ -1,0 +1,14 @@
+{
+  "name": "loquent",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"yarn client\" \"yarn api\"",
+    "client": "yarn --cwd client start",
+    "api": "yarn --cwd api start",
+    "dev": "concurrently \"yarn dev --prefix client\" \"yarn dev --prefix api\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
