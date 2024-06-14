@@ -12,7 +12,7 @@ const app = express();
 
 // Middleware
 const corsOptions = {
-  origin: "http://localhost:3000", // your frontend domain
+  origin: "http://loquent.vercel.app", // your frontend domain
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -36,6 +36,9 @@ mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
+app.get("/", (req, res) => {
+  res.json("Welcome to Loquent API");
+});
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);
