@@ -20,13 +20,13 @@ app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 app.options("*", cors(corsOptions));
 // Database connection
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const uri = process.env.MONGO_URI; // Ensure this environment variable is correctly set
+mongoose.connect(uri);
+
 mongoose.connection.on("error", (err) => {
   console.error("MongoDB connection error:", err);
 });
+
 mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
 });
@@ -35,8 +35,8 @@ app.get("/", (req, res) => {
   res.json("Welcome to Loquent API");
 });
 // Routes
-app.use("/api/auth", require("./routes/authRoutes.js"));
-app.use("/api/posts", require("./routes/postRoutes.js"));
+app.use("/api/auth", require("../routes/authRoutes.js"));
+app.use("/api/posts", require("../routes/postRoutes.js"));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
