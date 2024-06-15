@@ -2,6 +2,16 @@
 
 Loquent is a full-stack blog website built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It allows users to create, read, update, and delete blog posts through a modern and responsive user interface.
 
+## Video Demonstration
+
+
+
+https://github.com/praveen-p09/loquent/assets/128630671/1d9072db-3c34-4709-9121-48b2b3068cf8
+
+
+
+
+
 ## Features
 
 - **User Authentication**: Secure authentication system using JSON Web Tokens (JWT) for login and registration.
