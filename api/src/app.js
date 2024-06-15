@@ -7,7 +7,10 @@ dotenv.config();
 
 const app = express();
 const corsOptions = {
-  origin: "https://loquent.vercel.app/", // Update this to your actual frontend URL
+  origin: [
+    "https://loquent.vercel.app/",
+    "https://loquent-frontend-praveens-projects-b44e7a9d.vercel.app/",
+  ],
   methods: "GET,POST,PUT,DELETE",
   credentials: true,
 };
