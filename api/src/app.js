@@ -39,7 +39,7 @@ if (!uri) {
   process.exit(1);
 }
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri, {});
 
 mongoose.connection.on("error", (err) => {
   console.error("MongoDB connection error:", err);
