@@ -31,7 +31,6 @@ Before running the application locally, ensure you have the following installed:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/praveen-p09/loquent.git
-   cd api
    ```
 
 2. **Install Dependencies**:
@@ -46,7 +45,7 @@ Before running the application locally, ensure you have the following installed:
    ```
    Create a `.env` file in the root of the frontend directory and specify the API URL:
    ```bash
-   REACT_APP_API_URL=http://localhost:4000/api
+   REACT_APP_API_URL=http://localhost:4000
    ```
 4. **Run the App**:
    ```bash
