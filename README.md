@@ -51,6 +51,7 @@ Before running the application locally, ensure you have the following installed:
    ```bash
    yarn start
    ```
+   Starts server at `http://localhost:4000` and React app at `http://localhost:3000`
 
 OR
 
@@ -76,6 +77,7 @@ OR
    ```bash
    yarn start
    ```
+   Starts server at `http://localhost:4000`
 
 ### Frontend Setup
 
@@ -90,12 +92,13 @@ OR
 3. **Environment Variables**:
    Create a `.env` file in the root of the frontend directory and specify the API URL:
    ```bash
-   REACT_APP_API_URL=http://localhost:4000/api
+   REACT_APP_API_URL=http://localhost:4000
    ```
 4. **Run the Development Server**:
    ```bash
    yarn start
    ```
+   Starts React app at `http://localhost:3000`
 
 ### Contributing
 
