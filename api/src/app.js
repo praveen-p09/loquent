@@ -21,6 +21,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.options("*", cors(corsOptions));
 // Database connection
 const uri = process.env.MONGO_URI; // Ensure this environment variable is correctly set
+console.log(uri);
 mongoose.connect(uri);
 
 mongoose.connection.on("error", (err) => {
@@ -30,7 +31,11 @@ mongoose.connection.on("error", (err) => {
 mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
 });
-
+app.get("/debug/env", (req, res) => {
+  res.json({
+    MONGO_URI: process.env.MONGO_URI || "MONGO_URI is not defined",
+  });
+});
 app.get("/", (req, res) => {
   res.json("Welcome to Loquent API");
 });
