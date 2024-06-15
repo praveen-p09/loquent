@@ -9,11 +9,9 @@ dotenv.config();
 
 const app = express();
 const corsOptions = {
-  origin: [
-    "https://loquent.vercel.app",
-    "https://loquent-frontend-praveens-projects-b44e7a9d.vercel.app",
-  ],
-  methods: "GET, POST, PUT, DELETE",
+  origin: "https://loquent.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 };
 

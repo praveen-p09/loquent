@@ -22,7 +22,7 @@ export default function IndexPage() {
   return (
     <>
       {loading ? (
-        <CircularProgress />
+        <CircularProgress color="#1e1e1e" />
       ) : (
         <>
           {posts.length > 0 ? (
