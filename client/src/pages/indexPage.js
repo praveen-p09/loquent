@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Post from "../Post";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function IndexPage() {
   const [posts, setPosts] = useState([]);
