@@ -33,8 +33,8 @@ mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
-app.use("/", (req, res) => {
-  res.send("Welcome to Loquent API");
+app.get("/", (req, res) => {
+  res.json("Welcome to Loquent API");
 });
 // Routes
 app.use("/api/auth", require("./routes/authRoutes.js"));
