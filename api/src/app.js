@@ -8,12 +8,11 @@ dotenv.config();
 const app = express();
 const corsOptions = {
   origin: [
-    "https://loquent.vercel.app/",
-    "https://loquent-frontend-praveens-projects-b44e7a9d.vercel.app/",
+    "https://loquent.vercel.app",
+    "https://loquent-frontend-praveens-projects-b44e7a9d.vercel.app",
   ],
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "Content-Type,Authorization",
-  credentials: true, // Allow cookies and credentials to be sent cross-domain
+  methods: "GET, POST, PUT, DELETE",
+  credentials: true,
 };
 
 // Middleware
