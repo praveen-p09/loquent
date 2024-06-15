@@ -12,7 +12,8 @@ const corsOptions = {
     "https://loquent-frontend-praveens-projects-b44e7a9d.vercel.app/",
   ],
   methods: "GET,POST,PUT,DELETE",
-  credentials: true,
+  allowedHeaders: "Content-Type,Authorization",
+  credentials: true, // Allow cookies and credentials to be sent cross-domain
 };
 
 // Middleware
