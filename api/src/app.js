@@ -3,6 +3,8 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const path = require("path");
+const os = require("os");
 dotenv.config();
 
 const app = express();
@@ -20,7 +22,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use("/uploads", express.static(__dirname + "/uploads"));
+app.use("/uploads", express.static(path.join(os.tmpdir(), "uploads")));
 app.options("*", cors(corsOptions));
 
 // Debugging endpoint for environment variables
@@ -47,16 +49,6 @@ mongoose.connection.on("error", (err) => {
 
 mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
-});
-
-// Debugging endpoint for route paths
-app.get("/debug/routes", (req, res) => {
-  const authRoutes = require.resolve("../routes/authRoutes.js");
-  const postRoutes = require.resolve("../routes/postRoutes.js");
-  res.json({
-    authRoutes: authRoutes || "authRoutes path is incorrect",
-    postRoutes: postRoutes || "postRoutes path is incorrect",
-  });
 });
 
 // Routes
