@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "install": "yarn --cwd client install && yarn --cwd api install",
     "start": "concurrently \"yarn client\" \"yarn api\"",
     "client": "yarn --cwd client start",
     "api": "yarn --cwd api start",
