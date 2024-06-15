@@ -473,6 +473,7 @@ form.register h1 {
   }
   main {
     padding: 40px;
+    width: 80%;
   }
   .post-page .edit-btn,
   .post-page .del-btn {
