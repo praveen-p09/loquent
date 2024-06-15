@@ -10,9 +10,9 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "https://loquent.vercel.app", // Your frontend URL
-    methods: "GET,POST,PUT,DELETE", // Allowed HTTP methods
-    credentials: true, // If you need to handle cookies, set this to true
+    origin: "https://loquent.vercel.app/", // Update this to your actual frontend URL
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
   })
 );
 app.use(express.json());
