@@ -6,15 +6,13 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
-
+const corsOptions = {
+  origin: "https://loquent.vercel.app/", // Update this to your actual frontend URL
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true,
+};
 // Middleware
-app.use(
-  cors({
-    origin: "https://loquent.vercel.app/", // Update this to your actual frontend URL
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true,
-  })
-);
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
